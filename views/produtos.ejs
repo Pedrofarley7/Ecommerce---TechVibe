@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produtos - TechVibe</title>
+    <link rel="stylesheet" href="/stylesheets/produtos.css">
+</head>
+<body>
+    <%- include('./partials/cabecalho') %>
+    
+    <h1>Todos os Produtos</h1>
+
+    <!-- Filtro de categorias -->
+    <div class="filter">
+        <form action="/produtos" method="GET">
+            <label for="categoria">Filtrar por Categoria:</label>
+            <select name="categoria" id="categoria" onchange="this.form.submit()">
+                <option value="">Todos</option>
+                <option value="Smartphone">Smartphones</option>
+                <option value="Notebook">Notebooks</option>
+                <option value="Acessorio">Acessórios</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="products-grid">
+        <% produtos.forEach(produto => { %>
+            <div class="product-card">
+                <img src="<%= produto.imagens[0] %>" alt="<%= produto.nome %>">
+                <h2><%= produto.nome %></h2>
+                <p>R$ <%= produto.preco.toFixed(2) %></p>
+                <a href="/produtos/<%= produto._id %>" class="btn">Ver Detalhes</a>
+            </div>
+        <% }); %>
+    </div>
+    
+    <%- include('./partials/rodape') %>
+</body>
+</html>

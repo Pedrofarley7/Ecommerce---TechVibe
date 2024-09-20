@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TechVibe - E-commerce</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+<body>
+    
+  <%- include('./partials/cabecalho') %>
+
+    
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">A Tecnologia que você precisa para o seu futuro</h1>
+                <p class="hero-description">
+                    Bem-vindo à TechVibe, a loja que oferece o que há de melhor em tecnologia!
+                    Oferecemos produtos de alta qualidade para atender a todas as suas necessidades tecnológicas.
+                </p>
+                <a href="/produtos" class="cta-button">
+                    Conhecer mais <span class="cta-arrow">→</span>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="/images/photo-note.png" alt="Imagem de computador ou notebook">
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="products-section">
+        <h2 class="section-title">Produtos em destaque</h2>
+        <div class="products-grid">
+           
+            <div class="product-card">
+                <img src="/images/a15.png" alt="Produto 1">
+                <h3 class="product-name">Samsung <br>Galaxy A15</h3>
+                <p class="product-price">R$ 899,00</p>
+                <a href="/produtos" class="product-button">Ver mais</a>
+            </div>
+            <div class="product-card">
+                <img src="/images/g54.png" alt="Motorla G54">
+                <h3 class="product-name">Motorola G54</h3>
+                <p class="product-price">R$1100,00</p>
+                <a href="/produtos" class="product-button">Ver mais</a>
+            </div>
+            
+        </div>
+    </section>
+
+    
+    <section class="testimonials-section">
+        <h2 class="section-title">Depoimentos de clientes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"A TechVibe tem produtos incríveis! Comprei meu notebook aqui e estou muito satisfeito."</p>
+                <p class="testimonial-author">- João</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Atendimento excelente e produtos de alta qualidade. Recomendo a todos."</p>
+                <p class="testimonial-author">- Maria</p>
+            </div>
+    </section>
+
+    <footer>
+        <%- include('./partials/rodape') %>
+    </footer>
+</body>
+</html>

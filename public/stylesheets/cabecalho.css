@@ -1,0 +1,103 @@
+/* Fonte Poppins */
+body, button, a {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do cabeçalho */
+.header {
+    background-color: #020740;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 95px;
+}
+
+/* Estilo da logo */
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 70px;
+}
+
+/* Estilo da barra de navegação */
+.navbar {
+    flex-grow: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ffffff;
+    color: #020740;
+}
+
+/* Estilo do bloco de autenticação e carrinho */
+.auth-cart {
+    display: flex;
+    gap: 20px;
+}
+
+.cart-link img, .user-link img {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Estilo para os links de autenticação */
+.auth-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.auth-link {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.auth-link:first-child {
+    margin-top: 0;
+}
+
+.auth-link:hover {
+    color: #ccc;
+}
+
+/* Estilo para o ícone de usuário */
+.user-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 4px;
+}

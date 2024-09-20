@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciar Produtos - TechVibe</title>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+<body>
+    <%- include('../partials/cabecalho') %>
+
+    <h1>Gerenciar Produtos</h1>
+
+    <!-- Formulário para adicionar um novo produto -->
+    <h2>Adicionar Novo Produto</h2>
+    <form action="/admin/add" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" step="0.01" required>
+
+        <label for="imagens">Imagens (URLs separados por vírgula):</label>
+        <input type="text" id="imagens" name="imagens">
+
+        <label for="categoria">Categoria:</label>
+        <input type="text" id="categoria" name="categoria">
+
+        <label for="estoque">Estoque:</label>
+        <input type="number" id="estoque" name="estoque">
+
+        <button type="submit" class="btn">Adicionar Produto</button>
+    </form>
+
+    <!-- Lista de produtos com opções de edição e exclusão -->
+    <h2>Lista de Produtos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% produtos.forEach(produto => { %>
+                <tr>
+                    <td><%= produto.nome %></td>
+                    <td><%= produto.descricao %></td>
+                    <td>R$ <%= produto.preco.toFixed(2) %></td>
+                    <td>
+                        <!-- Formulário para editar o produto -->
+                        <a href="/admin/edit/<%= produto._id %>" class="btn">Editar</a>
+                        
+                        <!-- Formulário para excluir o produto -->
+                        <form action="/admin/delete/<%= produto._id %>" method="post" style="display:inline;">
+                            <button type="submit" class="btn">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <%- include('../partials/rodape') %>
+</body>
+</html>

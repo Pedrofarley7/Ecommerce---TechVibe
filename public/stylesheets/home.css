@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+.hero-section {
+  background-color: #f0f4ff;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  display: flex;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #020740;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #020740;
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #333333;
+}
+
+.cta-arrow {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.hero-image img {
+  max-width: 90%;
+  height: auto;
+}
+
+.products-section, .testimonials-section {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+
+.products-grid, .testimonials-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card, .testimonial-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+.product-card:hover, .testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img, .testimonial-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #020740;
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.product-button:hover {
+  background-color: #333333;
+}
+
+.testimonial-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #020740;
+}
+
+.promo-section {
+  background-color: #e0f7fa;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.promo-banner {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #00bcd4;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.promo-banner:hover {
+  background-color: #00796b;
+}

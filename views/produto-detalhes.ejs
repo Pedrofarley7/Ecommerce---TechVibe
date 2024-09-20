@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= produto.nome %> - TechVibe</title>
+    <link rel="stylesheet" href="/stylesheets/detalheProduto.css">
+</head>
+<body>
+    <%- include('./partials/cabecalho') %>
+    
+    <div class="product-details-container">
+        <!-- Carrossel de Imagens -->
+        <div class="product-carousel">
+            <div class="carousel-images">
+                <% produto.imagens.forEach((imagem, index) => { %>
+                    <img src="<%= imagem %>" alt="<%= produto.nome %>" class="<%= index === 0 ? 'active' : '' %>">
+                <% }); %>
+            </div>
+            <div class="carousel-thumbnails">
+                <% produto.imagens.forEach((imagem, index) => { %>
+                    <img src="<%= imagem %>" alt="<%= produto.nome %>" data-index="<%= index %>" class="<%= index === 0 ? 'active' : '' %>">
+                <% }); %>
+            </div>
+        </div>
+
+        <!-- Informações do Produto -->
+        <div class="product-info">
+            <h1><%= produto.nome %></h1>
+            <p><%= produto.descricao %></p>
+            <p class="price">R$ <%= produto.preco.toFixed(2) %></p>
+            <a href="#" class="btn">Adicionar ao Carrinho</a>
+        </div>
+    </div>
+    
+    <%- include('./partials/rodape') %>
+
+    <!-- Script para o carrossel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselImages = document.querySelector('.carousel-images');
+            const thumbnails = document.querySelectorAll('.carousel-thumbnails img');
+
+            thumbnails.forEach((thumbnail) => {
+                thumbnail.addEventListener('click', () => {
+                    const index = thumbnail.getAttribute('data-index');
+                    carouselImages.scrollTo({
+                        left: thumbnail.parentElement.children[index].offsetLeft,
+                        behavior: 'smooth'
+                    });
+
+                    thumbnails.forEach((img) => img.classList.remove('active'));
+                    thumbnail.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
