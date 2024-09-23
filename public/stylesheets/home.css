@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.hero-section {
+.secao-hero {
   background-color: #f0f4ff;
   padding: 60px 20px;
   display: flex;
@@ -10,29 +10,29 @@
   align-items: center;
 }
 
-.hero-content {
+.conteudo-hero {
   max-width: 1200px;
   display: flex;
   gap: 40px;
 }
 
-.hero-text {
+.texto-hero {
   flex: 1;
 }
 
-.hero-title {
+.titulo-hero {
   font-size: 2.5rem;
   color: #020740;
   margin-bottom: 20px;
 }
 
-.hero-description {
+.descricao-hero {
   font-size: 1rem;
   color: #333333;
   margin-bottom: 30px;
 }
 
-.cta-button {
+.botao-cta {
   display: inline-block;
   padding: 10px 20px;
   background-color: #020740;
@@ -43,38 +43,38 @@
   transition: background-color 0.3s;
 }
 
-.cta-button:hover {
+.botao-cta:hover {
   background-color: #333333;
 }
 
-.cta-arrow {
+.seta-cta {
   display: inline-block;
   margin-left: 8px;
 }
 
-.hero-image img {
+.imagem-hero img {
   max-width: 90%;
   height: auto;
 }
 
-.products-section, .testimonials-section {
+.secao-produtos, .secao-depoimentos {
   padding: 40px 20px;
   background-color: #ffffff;
   text-align: center;
 }
 
-.section-title {
+.titulo-secao {
   font-size: 1.75rem;
   margin-bottom: 20px;
 }
 
-.products-grid, .testimonials-grid {
+.grid-produtos, .grid-depoimentos {
   display: flex;
   gap: 20px;
   justify-content: center;
 }
 
-.product-card, .testimonial-card {
+.cartao-produto, .cartao-depoimento {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
@@ -84,16 +84,16 @@
   transition: transform 0.2s;
 }
 
-.product-card:hover, .testimonial-card:hover {
+.cartao-produto:hover, .cartao-depoimento:hover {
   transform: translateY(-5px);
 }
 
-.product-card img, .testimonial-card img {
+.cartao-produto img, .cartao-depoimento img {
   max-width: 100%;
   height: auto;
 }
 
-.product-button {
+.botao-produto {
   display: inline-block;
   padding: 8px 16px;
   background-color: #020740;
@@ -104,45 +104,127 @@
   transition: background-color 0.3s;
 }
 
-.product-button:hover {
+.botao-produto:hover {
   background-color: #333333;
 }
 
-.testimonial-card img {
+.cartao-depoimento img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
-.testimonial-text {
+.texto-depoimento {
   font-size: 0.9rem;
   color: #333333;
 }
 
-.testimonial-author {
+.autor-depoimento {
   font-weight: bold;
   color: #020740;
 }
 
-.promo-section {
-  background-color: #e0f7fa;
+.secao-faq {
   padding: 40px 20px;
+  background-color: #ffffff;
   text-align: center;
-  margin-bottom: 40px;
 }
 
-.promo-banner {
-  display: inline-block;
-  padding: 20px 40px;
-  background-color: #00bcd4;
-  color: #ffffff;
-  border-radius: 10px;
-  font-size: 1.25rem;
-  text-decoration: none;
+.container-faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.item-faq {
+  background-color: #f0f4ff;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 15px;
   transition: background-color 0.3s;
 }
 
-.promo-banner:hover {
-  background-color: #00796b;
+.item-faq:hover {
+  background-color: #e0e7ff;
+}
+
+.pergunta-faq {
+  font-weight: 600;
+  color: #020740;
+  margin-bottom: 10px;
+}
+
+.resposta-faq {
+  color: #333333;
+}
+
+.secao-newsletter {
+  padding: 40px 20px;
+  background-color: #f0f4ff;
+  text-align: center;
+}
+
+.descricao-newsletter {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.formulario-newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.entrada-newsletter {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 1rem;
+}
+
+.botao-newsletter {
+  padding: 10px 20px;
+  background-color: #020740;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao-newsletter:hover {
+  background-color: #333333;
+}
+
+
+@media (max-width: 768px) {
+  .conteudo-hero {
+    flex-direction: column; /* Coloca texto e imagem em coluna */
+    align-items: center; /* Centraliza o conteúdo */
+  }
+
+  .titulo-hero {
+    font-size: 2rem; /* Reduz o tamanho do título */
+  }
+
+  .descricao-hero {
+    font-size: 0.9rem; /* Reduz o tamanho da descrição */
+  }
+
+  .grid-produtos, .grid-depoimentos {
+    flex-direction: column; /* Coloca os cartões em coluna em telas menores */
+    align-items: center; /* Centraliza os cartões */
+  }
+
+  .cartao-produto, .cartao-depoimento {
+    flex: 1 1 100%; /* Faz os cartões ocuparem 100% da largura */
+  }
+
+  .entrada-newsletter {
+    width: 80%; /* Ajusta a largura da entrada da newsletter */
+  }
 }
