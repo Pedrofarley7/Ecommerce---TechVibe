@@ -69,6 +69,12 @@ body {
     flex: 2 1 600px;
 }
 
+.product-info ul {
+    list-style-type: disc; /* Adiciona marcadores (pode ser alterado para outro estilo) */
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
 .product-info h1 {
     font-size: 2rem;
     color: #020740;
@@ -78,8 +84,9 @@ body {
 .product-info p {
     font-size: 1.1rem;
     color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.8; /* Aumentar o espaçamento entre as linhas */
+    margin-bottom: 20px; /* Adicionar mais espaço abaixo de cada parágrafo */
+    white-space: pre-line; /* Permitir quebras de linha automáticas */
 }
 
 .product-info .price {
