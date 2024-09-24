@@ -7,7 +7,7 @@
 
 /* Estilo geral do corpo da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     padding: 20px;
@@ -34,15 +34,20 @@ body {
 
 .carousel-images {
     display: flex;
-    overflow: hidden;
     position: relative;
+    width: 100%; /* Ajustar para garantir que as imagens se alinhem corretamente */
+    overflow: hidden;
 }
 
 .carousel-images img {
     width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    transition: opacity 0.3s ease; /* Transição suave entre imagens */
+    display: none; /* Todas as imagens inicialmente escondidas */
+}
+
+.carousel-images img.active {
+    display: block; /* Exibir apenas a imagem ativa */
 }
 
 .carousel-thumbnails {
@@ -61,7 +66,7 @@ body {
 }
 
 .carousel-thumbnails img.active {
-    border-color: #020740;
+    border-color: #020740; /* Muda a borda da miniatura ativa */
 }
 
 /* Informações do produto */

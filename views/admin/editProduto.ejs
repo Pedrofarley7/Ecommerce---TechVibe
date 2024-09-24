@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Editar Produto</h1>
-    <form action="/admin/edit/<%= produto._id %>" method="POST">
+    <form action="/admin/edit/<%= produto._id %>" method="POST" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" value="<%= produto.nome %>" required>
         
@@ -19,9 +19,20 @@
         <label for="preco">Preço:</label>
         <input type="number" id="preco" name="preco" value="<%= produto.preco %>" required>
         
-        <label for="imagens">Imagens (URLs, separados por vírgula):</label>
-        <input type="text" id="imagens" name="imagens" value="<%= produto.imagens.join(',') %>">
+        <!-- Exibir as imagens já existentes -->
+        <label>Imagens atuais:</label>
+<div class="existing-images">
+    <% produto.imagens.forEach((imagem) => { %>
+        <img src="<%= imagem %>" alt="<%= produto.nome %>" class="preview-img">
+    <% }); %>
+</div>
         
+        <!-- Upload de novas imagens -->
+        <div>
+            <label for="imagens">Atualizar imagem do Produto:</label>
+            <input type="file" id="imagens" name="imagens" accept="image/*" multiple>
+        </div>
+
         <label for="categoria">Categoria:</label>
         <input type="text" id="categoria" name="categoria" value="<%= produto.categoria %>">
         
@@ -31,5 +42,21 @@
         <button type="submit">Atualizar Produto</button>
     </form>
     <a href="/admin">Voltar ao Painel</a>
+
+    <!-- Estilo interno para as imagens -->
+    <style>
+        .existing-images {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .existing-images img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </body>
 </html>
