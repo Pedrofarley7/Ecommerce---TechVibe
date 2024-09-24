@@ -2,10 +2,10 @@ const Produto = require('../ModeloDB/ModeloProdutos');
 const path = require('path');
 const multer = require('multer');
 
-// Configuração do multer para salvar os arquivos localmente
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'public/uploads/'); // Pasta onde os arquivos serão salvos
+        cb(null, 'public/uploads/'); 
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);

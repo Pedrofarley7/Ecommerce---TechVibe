@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const prodControlador = require('../Admin/ProdControlador');
 
+
 // Página de administração (lista produtos)
 router.get('/', prodControlador.adminDashboard);
 

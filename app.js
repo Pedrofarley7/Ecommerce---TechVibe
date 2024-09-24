@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,14 +7,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
+
 var indexRouter = require('./routes/index');
 var produtosRouter = require('./routes/produtos');
 var carrinhoRouter = require('./routes/carrinho.js');
-var loginRouter = require('./routes/login');
+var loginRouter = require('./routes/login-Admin.js');
 var cadastroRouter = require('./routes/cadastro');
 var sobreNosRouter = require('./routes/sobreNos');
 const adminRouter = require('./routes/admin');
+
 require('./db');
+
 
 
 var app = express();
